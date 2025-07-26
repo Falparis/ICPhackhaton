@@ -7,19 +7,6 @@ The response is then returned to the user, and the user can submit some follow-u
 
 When viewing this project in ICP Hackhaton, you can deploy it directly to the mainnet for free by clicking "Run" in the upper right corner. Open this project in ICP Hackhaton
 
-## Deploying from ICP Hackhaton
-
-
-## Build and deploy from the command-line
-
-### 1. [Download and install the IC SDK.](https://internetcomputer.org/docs/building-apps/getting-started/install)
-
-### 2. Download your project from ICP Hackhaton using the 'Download files' button on the upper left corner, or [clone the GitHub examples repository.](https://github.com/dfinity/examples/)
-
-### 3. Navigate into the project's directory.
-
-### 4. Set up Ollama
-
 To be able to test the agent locally, you'll need a server for processing the agent's prompts. For that, we'll use `ollama`, which is a tool that can download and serve LLMs.  
 See the documentation on the [Ollama website](https://ollama.com/) to install it. Once it's installed, run:
 
@@ -40,7 +27,7 @@ Modifier
 
 The above command will download an 8B parameter model, which is around 4GiB. Once the command executes and the model is loaded, you can terminate it. You won't need to do this step again.
 
-### 5. Deploy the project to your local environment:
+## Deploy the project to your local environment:
 
 dfx start --background --clean && dfx deploy
 
