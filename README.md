@@ -1,17 +1,14 @@
-# LLM Chatbot
+# AI Ethics Agents
 
-The LLM Chatbot example demonstrates how an ICP smart contract can be used to interact with a large language model (LLM) to generate text. The user can input a prompt, and the smart contract will use the LLM to generate a response.  
-The response is then returned to the user, and the user can submit some follow-up prompts to continue the conversation.
-
-## Deploying from ICP Hackhaton
-
-When viewing this project in ICP Hackhaton, you can deploy it directly to the mainnet for free by clicking "Run" in the upper right corner. Open this project in ICP Hackhaton:
-
-[![](https://icp.ninja/assets/open.svg)](https://icp.ninja/i?g=https://github.com/dfinity/examples/rust/llm_chatbot)
+The AI Ethics Agents project demonstrates how an ICP smart contract can be used to interact with a large language model (LLM) to generate context-aware, ethically aligned responses. The user can input a prompt, and the smart contract will use the LLM to generate a reply that respects legal and ethical constraints.  
+The response is then returned to the user, and the user can submit some follow-up prompts to continue the interaction within a compliant and responsible AI framework.
 
 ## Deploying from ICP Hackhaton
 
-[![](https://icp.ninja/assets/open.svg)](https://icp.ninja/editor?g=https://github.com/dfinity/examples/tree/master/rust/counter)
+When viewing this project in ICP Hackhaton, you can deploy it directly to the mainnet for free by clicking "Run" in the upper right corner. Open this project in ICP Hackhaton
+
+## Deploying from ICP Hackhaton
+
 
 ## Build and deploy from the command-line
 
