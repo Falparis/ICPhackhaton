@@ -14,16 +14,12 @@ ollama serve
 
 Expected to start listening on port 11434
 vbnet
-Copier
-Modifier
 
 The above command will start the Ollama server so that it can process requests by the agent. Additionally, and in a separate window, run the following command to download the LLM that will be used by the agent:
 
 ollama run llama3.1:8b
 
 vbnet
-Copier
-Modifier
 
 The above command will download an 8B parameter model, which is around 4GiB. Once the command executes and the model is loaded, you can terminate it. You won't need to do this step again.
 
@@ -32,8 +28,6 @@ The above command will download an 8B parameter model, which is around 4GiB. Onc
 dfx start --background --clean && dfx deploy
 
 pgsql
-Copier
-Modifier
 
 ## Security considerations and best practices
 
