@@ -89,7 +89,7 @@ function ApiKeyModal({ isOpen, onClose, onSave, currentApiKey, defaultApiKey }: 
           {/* Input Field */}
           <div>
             <label htmlFor="api-key" className="block text-sm font-medium text-gray-700 mb-2">
-              Mistral API Key
+              Ethix IA API Key
             </label>
             <input
               id="api-key"
@@ -97,7 +97,7 @@ function ApiKeyModal({ isOpen, onClose, onSave, currentApiKey, defaultApiKey }: 
               value={apiKey}
               onChange={(e) => setApiKey(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Enter your Mistral API key (leave empty to use default)"
+              placeholder="Enter your Ethix IA API key (leave empty to use default)"
               className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition-all"
               autoFocus
             />

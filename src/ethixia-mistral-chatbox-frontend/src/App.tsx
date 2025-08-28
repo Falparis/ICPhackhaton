@@ -11,7 +11,7 @@ interface Message {
   timestamp: Date;
 }
 
-interface MistralResponse {
+interface EthixIAResponse {
   choices: Array<{
     message: {
       content: string;
@@ -54,7 +54,7 @@ function App() {
     }
   }, []);
 
-  const callMistralAPI = async (userMessage: string): Promise<string> => {
+  const callEthixIAAPI = async (userMessage: string): Promise<string> => {
     const apiKey = getCurrentApiKey();
     
     const response = await fetch('https://api.mistral.ai/v1/chat/completions', {
@@ -82,12 +82,12 @@ function App() {
 
     if (!response.ok) {
       if (response.status === 401) {
-        throw new Error('Invalid API key. Please check your Mistral API key.');
+        throw new Error('Invalid API key. Please check your Ethix IA API key.');
       }
       throw new Error(`API request failed: ${response.status} ${response.statusText}`);
     }
 
-    const data: MistralResponse = await response.json();
+    const data: EthixIAResponse = await response.json();
     return data.choices[0]?.message?.content || 'No response received';
   };
 
@@ -107,7 +107,7 @@ function App() {
     setError(null);
 
     try {
-      const response = await callMistralAPI(userMessage.content);
+      const response = await callEthixIAAPI(userMessage.content);
       
       const assistantMessage: Message = {
         id: (Date.now() + 1).toString(),
@@ -168,7 +168,7 @@ function App() {
           {messages.length === 0 && (
             <div className="text-center py-12">
               <Bot className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-              <h2 className="text-xl font-medium text-gray-600 mb-2">Welcome to Mistral AI Chat</h2>
+              <h2 className="text-xl font-medium text-gray-600 mb-2">Welcome to Ethix IA Chat</h2>
               <p className="text-gray-500">Start a conversation by typing a message below</p>
             </div>
           )}
@@ -214,17 +214,7 @@ function App() {
 
         {/* Footer */}
         <footer className="bg-white border-t border-gray-200 p-4 text-center">
-          <p className="text-sm text-gray-500">
-            © 2025. Built with ❤️ using{' '}
-            <a 
-              href="https://caffeine.ai" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-indigo-600 hover:text-indigo-700 transition-colors"
-            >
-              caffeine.ai
-            </a>
-          </p>
+          
         </footer>
       </div>
 
