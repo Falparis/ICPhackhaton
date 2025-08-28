@@ -1,8 +1,8 @@
 # Continue building locally
 
-Projects deployed through ICP Ninja are temporary; they will only be live for 20 minutes before they are removed. The command-line tool `dfx` can be used to continue building your ICP Ninja project locally and deploy it to the mainnet.
+Projects deployed through ICP are temporary; they will only be live for 20 minutes before they are removed. The command-line tool `dfx` can be used to continue building your ICP   project locally and deploy it to the mainnet.
 
-To migrate your ICP Ninja project off of the web browser and develop it locally, follow these steps.
+To migrate your ICP   project off of the web browser and develop it locally, follow these steps.
 
 ### 1. Install developer tools.
 
@@ -34,13 +34,13 @@ sh -ci "$(curl -fsSL https://internetcomputer.org/install.sh)"
 
 - Install the Motoko package manager [Mops](https://docs.mops.one/quick-start#2-install-mops-cli): `npm i -g ic-mops`
 
-Lastly, navigate into your project's directory that you downloaded from ICP Ninja.
+Lastly, navigate into your project's directory that you downloaded from ICP  .
 
 #### Option 2: Dev Containers
 
 Continue building your projects locally by installing the [Dev Container extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) for VS Code and [Docker](https://docs.docker.com/engine/install/).
 
-Make sure Docker is running, then navigate into your project's directory that you downloaded from ICP Ninja and start the Dev Container by selecting `Dev-Containers: Reopen in Container` in VS Code's command palette (F1 or Ctrl/Cmd+Shift+P).
+Make sure Docker is running, then navigate into your project's directory that you downloaded from ICP   and start the Dev Container by selecting `Dev-Containers: Reopen in Container` in VS Code's command palette (F1 or Ctrl/Cmd+Shift+P).
 
 > Note that local development ports (e.g. the ports used by `dfx` or `vite`) are forwarded from the Dev Container to your local machine. In the VS code terminal, use Ctrl/Cmd+Click on the displayed local URLs to open them in your browser. To view the current port mappings, click the "Ports" tab in the VS Code terminal window.
 
