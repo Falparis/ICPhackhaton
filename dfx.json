@@ -1,41 +1,45 @@
 {
   "canisters": {
-    "backend": {
-      "candid": "backend/backend.did",
-      "type": "custom",
-      "shrink": true,
-      "gzip": true,
-      "wasm": "target/wasm32-unknown-unknown/release/backend.wasm",
-      "build": [
-        "cargo build --target wasm32-unknown-unknown --release -p backend",
-        "candid-extractor target/wasm32-unknown-unknown/release/backend.wasm > backend/backend.did"
+    "ethixia-mistral-chatbox-backend": {
+      "main": "src/ethixia-mistral-chatbox-backend/main.mo",
+      "type": "motoko"
+    },
+    "ethixia-mistral-chatbox-frontend": {
+      "dependencies": [
+        "ethixia-mistral-chatbox-backend"
       ],
-      "metadata": [
+      "frontend": {
+        "entrypoint": "src/ethixia-mistral-chatbox-frontend/index.html"
+      },
+      "source": [
+        "src/ethixia-mistral-chatbox-frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "ethixia-mistral-chatbox-frontend",
+      "headers": [
         {
-          "name": "candid:service"
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; img-src 'self' data: https: *; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https: data:; connect-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval';"
+        },
+        {
+          "key": "Access-Control-Allow-Origin",
+          "value": "*"
         }
       ]
-    },
-    "frontend": {
-      "dependencies": ["backend"],
-      "frontend": {
-        "entrypoint": "frontend/index.html"
-      },
-      "source": ["frontend/dist"],
-      "type": "assets"
-    },
-    "llm": {
-      "candid": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.did",
-      "type": "custom",
-      "specified_id": "w36hm-eqaaa-aaaal-qr76a-cai",
-      "remote": {
-        "id": {
-          "ic": "w36hm-eqaaa-aaaal-qr76a-cai"
-        }
-      },
-      "wasm": "https://github.com/dfinity/llm/releases/latest/download/llm-canister-ollama.wasm"
     }
   },
-  "output_env_file": ".env"
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "networks": {
+    "ic": {
+      "providers": ["https://ic0.app"],
+      "type": "persistent"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
 }
- 
